@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihláška draka na soutěž v plivání ohně</title>
+    <link rel="stylesheet" href="styly.css">
+</head>
+
+<body class="formular-pozadi">
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <h2>Přihláška draka</h2>
+
+        <label>Jméno draka:
+            <input type="text" name="jmeno" required>
+        </label>
+
+        <label>Pohlaví:</label>
+        <label><input type="radio" name="pohlavi" value="samec" required> Samec</label>
+        <label><input type="radio" name="pohlavi" value="samice"> Samice</label>
+
+        <label>Datum narození:
+            <input type="date" name="narozeni" required>
+        </label>
+
+        <label>Barva šupin:</label>
+            <input type="color" id="barva" name="barva" value="#ff0000" oninput="zobrazBarvu(this.value)">
+            <span id="kod-barvy">#ff0000</span>
+  
+
+        <label>Počet sežraných osob:
+            <input type="number" name="obeti" min="0" max="1000" required>
+        </label>
+
+        <label for="dech">Délka ohnivého dechu:
+            <input type="range" id="dech" name="dech" min="0" max="100" value="50" oninput="zobrazHodnotu(this.value)">
+            <span id="hodnota-dechu">50</span> m
+        </label>
+
+        <label><input type="checkbox" name="certifikat"> Mám certifikát nehořlavosti</label>
+
+        <label>Letový kód draka:
+            <input type="text" name="kod" placeholder="např. CZ-48P" pattern="[A-Z]{2}-[0-9]+[A-Z]" required>
+        </label>
+
+        <label>Obrázek draka:
+            <input type="file" name="obrazek" accept="image/*" required>
+        </label>
+
+        <label>Disciplíny:
+            <select name="discipliny" multiple size="3">
+                <option>Plivání ohně na cíl</option>
+                <option>Nejhlasitější řev</option>
+                <option>Let mezi sopkami</option>
+            </select>
+        </label>
+
+        <fieldset class="ucet">
+            <legend>Účet draka</legend>
+            <label>Email:
+                <input type="email" name="email" placeholder="ohnivy@drak.cz" required>
+            </label>
+            <label>Heslo:
+                <input type="password" name="heslo" required>
+            </label>
+        </fieldset>
+
+        <input type="submit" value="Odeslat přihlášku" class="tlacitko">
+    </form>
+
+    <a href="index.html" class="tlacitko">Zpět na úvod</a>
+
+    <script>
+        // aktualizace čísla u posuvníku
+        function zobrazHodnotu(hodnota) {
+            document.getElementById("hodnota-dechu").textContent = hodnota;
+        }
+
+        // zobrazení kódu barvy
+        function zobrazBarvu(barva) {
+            document.getElementById("kod-barvy").textContent = barva;
+        }
+    </script>
+
+</body>
+</html>
