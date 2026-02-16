@@ -80,7 +80,7 @@ form {
 .reset-tlacitko:active {
     animation: none;
     transform: scale(1);
-    background-color: rgb(80, 80, 80); 
+    background-color: rgb(49, 25, 116); 
     color: white;
 }
 
