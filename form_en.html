@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Application for the Fire-Breathing Competition</title>
+    <link rel="stylesheet" href="styly.css">
+</head>
+
+<body class="formular-pozadi">
+    <a href="index.html" class="tlacitko">Czech</a>
+
+    <form action="https://formsubmit.co/tlucakova@spskt.cz" method="post" enctype="multipart/form-data">
+        <h2>Dragon Application</h2>
+
+        <label>Dragon Name:
+            <input type="text" name="nome" required>
+        </label>
+
+        <label>Gender:</label>
+        <label><input type="radio" name="sesso" value="male"> Male</label>
+        <label><input type="radio" name="sesso" value="female"> Female</label>
+
+        <label>Date of Birth:
+            <input type="date" name="data di nascita">
+        </label>
+
+        <label>Scale Color:</label>
+            <input type="color" id="barva" name="color" value="#ff0000" oninput="zobrazBarvu(this.value)">
+            <span id="kod-barvy">#ff0000</span>
+
+        <label>Number of People Eaten:
+            <input type="number" name="vittime" min="0" max="1000">
+        </label>
+
+        <label for="dech">Fire Breath Length:
+            <input type="range" id="dech" name="alito" min="0" max="100" value="50" oninput="zobrazHodnotu(this.value)">
+            <span id="hodnota-dechu">50</span> m
+        </label>
+
+        <label><input type="checkbox" name="certificato"> I have a fire-resistance certificate</label>
+
+        <label>Dragon Flight Code:
+            <input type="text" name="codice" placeholder="e.g. CZ-48P" pattern="[A-Z]{2}-[0-9]+[A-Z]">
+        </label>
+
+        <label>Dragon Image:
+            <input type="file" name="imagino" accept="image/*">
+        </label>
+
+        <label>Disciplines:
+            <select name="discipliny" multiple size="3">
+                <option>Fire Breathing at a Target</option>
+                <option>Loudest Roar</option>
+                <option>Flight Between Volcanoes</option>
+            </select>
+        </label>
+
+        <fieldset class="ucet">
+            <legend>Dragon Account</legend>
+            <label>Email:
+                <input type="posto elettronico" name="posto elettronico" placeholder="fiery@dragon.com">
+            </label>
+            <label>Password:
+                <input type="password" name="heslo">
+            </label>
+        </fieldset>
+
+        <input type="submit" value="Submit Application" class="tlacitko">
+    </form>
+
+    <script>
+        function zobrazHodnotu(hodnota) {
+            document.getElementById("hodnota-dechu").textContent = hodnota;
+        }
+        function zobrazBarvu(barva) {
+            document.getElementById("kod-barvy").textContent = barva;
+        }
+    </script>
+
+</body>
+</html>

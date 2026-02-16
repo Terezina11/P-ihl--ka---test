@@ -1,10 +1,14 @@
 form {
     max-width: 400px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #711cc0;
     border-radius: 12px;
-    background-color: #6cb8ff;
+    background-color: #ff6cda;
+    position: relative;
+    margin-top: 40px;
+
+    overflow: hidden;
   }
   
   label {
@@ -43,4 +47,98 @@ form {
 
 #dech{
     width: 100%;
+}
+
+.tlacitko {
+    transition: all 200ms ease;
+}
+
+.tlacitko:hover {
+    transform: scale(1.2) rotate(2deg);
+    background-color: rgb(111, 22, 33);
+    color: rgb(11, 2, 3);
+}
+
+.reset-tlacitko {
+    transition: all 200ms ease;
+    position: relative;
+}
+
+.reset-tlacitko:hover {
+    transform: translate(10px, 10px);
+    animation: treseni 400ms infinite alternate;
+}
+
+@keyframes treseni {
+    0%   { transform: translate(10px,10px) scale(1); }
+    25%  { transform: translate(12px,8px) scale(1.1); }
+    50%  { transform: translate(8px,12px) scale(0.9); }
+    75%  { transform: translate(11px,9px) scale(1.05); }
+    100% { transform: translate(9px,11px) scale(0.95); }
+}
+
+.reset-tlacitko:active {
+    animation: none;
+    transform: scale(1);
+    background-color: rgb(80, 80, 80); 
+    color: white;
+}
+
+.auto {
+    position: fixed;
+    top: 0;
+    left: -50px;          
+    font-size: 40px;
+    transform: scaleX(-1);
+    animation: jizda 4s linear infinite;
+}
+
+@keyframes jizda {
+    0% {
+        left: -50px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+.kolo {
+   position: absolute; 
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    pointer-events: none; 
+    animation: obeh 8s linear infinite;
+}
+
+@keyframes obeh {
+
+    0% {
+        top: 0;
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        top: 0;
+        left: calc(100% - 30px);
+        transform: rotate(90deg);
+    }
+
+    50% {
+        top: calc(100% - 30px);
+        left: calc(100% - 30px);
+        transform: rotate(180deg);
+    }
+
+    75% {
+        top: calc(100% - 30px);
+        left: 0;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        transform: rotate(360deg);
+    }
 }
